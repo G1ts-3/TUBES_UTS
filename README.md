@@ -1,4 +1,4 @@
-# Tugas Besar UTS - Laboratorium Algoritma dan Pemrograman
+# Tugas Besar UTS - Algoritma Pemrograman LAB
 
 Repositori ini berisi proyek Tugas Besar (Tubes) untuk memenuhi Ujian Tengah Semester (UTS) mata kuliah Laboratorium Algoritma dan Pemrograman.
 
