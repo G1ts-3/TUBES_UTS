@@ -27,6 +27,12 @@ public class SistemAntrianKlinik {
     static ArrayList<Pasien> daftarPasien = new ArrayList<>();
     static Scanner input = new Scanner(System.in);
 
+    // === Data Dummy ===
+    static void initDummyData() {
+        daftarPasien.add(new Pasien("Andi", 30, "Bandung", "12-03-1995", "sedang"));
+        daftarPasien.add(new Pasien("Budi", 45, "Jakarta", "05-07-1980", "berat"));
+    }
+
     // === Pendaftaran Pasien ===
     static void tambahPasien() {
         System.out.print("Nama: ");
@@ -41,7 +47,7 @@ public class SistemAntrianKlinik {
         String riwayat = input.nextLine().toLowerCase();
 
         daftarPasien.add(new Pasien(nama, umur, asal, tgl, riwayat));
-        System.out.println("✅ Pasien berhasil didaftarkan!\n");
+        System.out.println("Pasien berhasil didaftarkan!\n");
     }
 
     // === Pencarian Pasien ===
@@ -60,7 +66,7 @@ public class SistemAntrianKlinik {
             }
         }
 
-        if (!ditemukan) System.out.println("❌ Data pasien tidak ditemukan.\n");
+        if (!ditemukan) System.out.println("Data pasien tidak ditemukan.\n");
     }
 
     // === Edit Pasien ===
@@ -79,12 +85,12 @@ public class SistemAntrianKlinik {
                 p.tanggalLahir = input.nextLine();
                 System.out.print("Ubah golongan riwayat (ringan/sedang/berat): ");
                 p.golonganRiwayat = input.nextLine().toLowerCase();
-                System.out.println("✅ Data pasien berhasil diperbarui!\n");
+                System.out.println("Data pasien berhasil diperbarui!\n");
                 ditemukan = true;
-                break;
+                
             }
         }
-        if (!ditemukan) System.out.println("❌ Pasien tidak ditemukan.\n");
+        if (!ditemukan) System.out.println("Pasien tidak ditemukan.\n");
     }
 
     // === Hapus Pasien ===
@@ -94,11 +100,11 @@ public class SistemAntrianKlinik {
         for (int i = 0; i < daftarPasien.size(); i++) {
             if (daftarPasien.get(i).nama.equalsIgnoreCase(nama)) {
                 daftarPasien.remove(i);
-                System.out.println("🗑️ Data pasien berhasil dihapus!\n");
+                System.out.println("Data pasien berhasil dihapus!\n");
                 return;
             }
         }
-        System.out.println("❌ Pasien tidak ditemukan.\n");
+        System.out.println("Pasien tidak ditemukan.\n");
     }
 
     // === Tampilkan Antrian (Prioritas) ===
@@ -120,9 +126,9 @@ public class SistemAntrianKlinik {
             }
         }
 
-        System.out.println("\n=== DAFTAR ANTRIAN PASIEN (BERDASARKAN PRIORITAS) ===");
+        System.out.println("\n------------------- DAFTAR ANTRIAN PASIEN (BERDASARKAN PRIORITAS) -------------------");
         for (int i = 0; i < daftarPasien.size(); i++) {
-            System.out.println((i + 1) + ". " + daftarPasien.get(i));
+            System.out.println((i + 1) + ". "+ daftarPasien.get(i));
         }
         System.out.println();
     }
@@ -135,9 +141,11 @@ public class SistemAntrianKlinik {
 
     // === Menu Utama ===
     public static void main(String[] args) {
+        initDummyData(); // ← tambah dummy data di awal
+
         int pilihan;
         do {
-            System.out.println("=== SISTEM ANTRIAN KLINIK ===");
+            System.out.println("------------------ SISTEM ANTRIAN KLINIK ------------------");
             System.out.println("1. Daftar Pasien Baru");
             System.out.println("2. Cari Data Pasien");
             System.out.println("3. Edit Data Pasien");
