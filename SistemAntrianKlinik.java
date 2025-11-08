@@ -141,7 +141,7 @@ public class SistemAntrianKlinik {
 
     // === Menu Utama ===
     public static void main(String[] args) {
-        initDummyData(); // ← tambah dummy data di awal
+        initDummyData();
 
         int pilihan;
         do {
