@@ -7,7 +7,7 @@ Repositori ini berisi proyek Tugas Besar (Tubes) untuk memenuhi Ujian Tengah Sem
 ## 📝 Deskripsi Proyek
 
 
-"Program-program sederhana untuk UTS"
+Program-program sederhana untuk UTS
 
 ## 💻 Teknologi yang Digunakan
 
